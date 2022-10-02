@@ -1,0 +1,117 @@
+// 1300 px Break Point
+@mixin media-desktop{
+    @media screen and (min-width:break-point(break-point-desktop)){
+        @content;
+    }
+}
+
+// 800 px Break Point
+@mixin media-tablet{
+    @media screen and (max-width:break-point(break-point-tablet)){
+        @content;
+    }
+}
+
+// 600 px Break Point
+@mixin media-medium{
+    @media screen and (max-width:break-point(break-point-medium)){
+        @content;
+    }
+}
+// 400 px Break Point
+@mixin media-small{
+    @media screen and (max-width:break-point(break-point-small)){
+        @content;
+    }
+}
+
+::selection{
+    background-color: var(--color-primary);
+}
+
+
+@import "1.reset";
+@import "2.variables";
+@import "3.utilities";
+@import "4.header";
+@import "5.showcase";
+@import "6.motto";
+@import "7.features";
+@import "8.trainers";
+@import "9.testimonials";
+@import "10.clients";
+@import "11.register";
+@import "12.footer";
+
+// Placeholder Styles
+// Background Properties
+%bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+// Sectionn Padding
+%sec-padding{
+    padding: 6vh 4vw;
+}
+
+// Section Headings
+%sec-heading{
+    font-size: font-size(font-size-medium);
+    font-weight: font-weight(font-weight-light);
+    letter-spacing: .2rem;
+    color: var(--color-quinary);
+}
+
+%sec-h3{
+    font-size: font-size(font-size-small);
+    color: var(--color-quinary);
+}
+%sec-h4{
+    color: var(--color-quinary);
+}
+
+%sec-para{
+    font-size: font-size(font-size-small);
+    color: var(--color-quinary);
+    letter-spacing: .2rem;
+}
+
+.scroll{
+    position: fixed;
+    bottom: 70rem;
+    right: 4rem;
+    height: 4rem;
+    width: 4rem;
+    background-image: url('../img/scroll/scroll.svg');
+    background-color: var(--color-secondary-m);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+    padding: 1rem;
+    z-index: 30;
+    cursor: pointer;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all .65s cubic-bezier(1, 0, 0, 1);
+}
+
+.scroll.active{
+    visibility: visible;
+    opacity: 1;
+    bottom: 4rem;
+}
+
+
+// Dark Mode Smooth Transition for All HTML elements
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after{
+    transition: all .3s ease-in-out !important;
+    transition-delay: 0 !important;
+}
+
